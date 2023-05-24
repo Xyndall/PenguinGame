@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
-    public float _moveSpeed = 5f;
 
     public float jumpForce = 5f;
     public float GroundDistance = .5f;
@@ -15,13 +14,18 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] LayerMask ground;
     [SerializeField] private PlayerInput playerInput;
 
-    private void Update()
+    private void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
 
         PlayerInputActions playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
+    }
+
+    private void Update()
+    {
 
         Debug.DrawRay(groundCheck.position, -Vector3.up * GroundDistance, Color.cyan);
     }
@@ -40,8 +44,6 @@ public class PlayerJump : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, 0.3f, ground))
         {
-
-
             return true;
         }
         else
