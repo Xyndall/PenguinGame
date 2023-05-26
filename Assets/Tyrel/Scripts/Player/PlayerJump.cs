@@ -7,17 +7,22 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
 
+    [Header("JumpVariables")]
     public float jumpForce = 5f;
     public float GroundDistance = .5f;
 
+    [Header("GrounbdCheck")]
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
     [SerializeField] private PlayerInput playerInput;
+
+    private PlayerAudio pAudio;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        pAudio = GetComponent<PlayerAudio>();
 
         PlayerInputActions playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
@@ -27,13 +32,14 @@ public class PlayerJump : MonoBehaviour
     private void Update()
     {
 
-        Debug.DrawRay(groundCheck.position, -Vector3.up * GroundDistance, Color.cyan);
+        Debug.DrawRay(groundCheck.position, -Vector3.up * GroundDistance, Color.red);
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded())
         {
+            pAudio.PlayJump();
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }

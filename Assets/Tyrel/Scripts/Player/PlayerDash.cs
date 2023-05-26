@@ -7,24 +7,29 @@ public class PlayerDash : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
 
+    [Header("GroundCheck")]
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
     public float GroundDistance = .5f;
 
+    [Header("PlayerInput")]
     [SerializeField] private PlayerInput playerInput;
     private PlayerInputActions playerInputActions;
 
+    [Header("DashVariables")]
     [SerializeField] float timer;
     public float DashCooldown = 2;
-    int dashCounter = 1;
     [SerializeField] bool isDashinig;
     [SerializeField] bool TouchedGround;
     public float DashAmount = 10;
+
+    private PlayerAudio pAudio;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        pAudio = GetComponent<PlayerAudio>();
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
@@ -60,7 +65,7 @@ public class PlayerDash : MonoBehaviour
         if (context.performed && !isDashinig && TouchedGround) 
         {
             Debug.Log("Dash");
-
+            pAudio.PlayDash();
             Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 
             Vector3 CameraForward = Camera.main.transform.forward;
@@ -77,11 +82,11 @@ public class PlayerDash : MonoBehaviour
                 + rightRelativeVerticalInput;
            
 
-            if(InputVector.x > 0 || InputVector.y > 0)
+            if(InputVector.x > 0.125f || InputVector.y > 0.125f)
             {
                 _rb.velocity = cameraRelativeMovement * DashAmount;
             }
-            else if(InputVector.x <= 0 || InputVector.y <= 0)
+            else if(InputVector.x <= 0.125f || InputVector.y <= 0.125f)
             {
                 _rb.velocity = CameraForward * DashAmount;
             }
@@ -90,7 +95,6 @@ public class PlayerDash : MonoBehaviour
 
             TouchedGround = false;
             isDashinig = true;
-            dashCounter--;
         }
     }
 

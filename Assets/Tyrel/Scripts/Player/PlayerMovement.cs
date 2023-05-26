@@ -5,17 +5,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private Rigidbody _rb;
-    public float _moveSpeed = 5f;
-
     [SerializeField] private Transform camFollow;
     [SerializeField] private PlayerInput playerInput;
     private PlayerInputActions playerInputActions;
+    public float _moveSpeed = 5f;
+    
+
+    [Header("CheckSphere")]
+    [SerializeField] LayerMask hardGround;
+    [SerializeField] LayerMask SoftGround;
+
+    private PlayerAudio pAudio;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        pAudio = GetComponent<PlayerAudio>();
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
@@ -43,9 +51,26 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
             + rightRelativeVerticalInput;
+
         _rb.AddForce(cameraRelativeMovement * _moveSpeed * Time.deltaTime, ForceMode.Impulse);
 
-
-       // _rb.AddForce(new Vector3(InputVector.x, 0, InputVector.y) * _moveSpeed * Time.deltaTime, ForceMode.Impulse);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if((hardGround.value & (1 << collision.gameObject.layer)) != 0)
+        {
+            Debug.Log("HardCollided");
+            pAudio.PlayHardCollision();
+        }
+
+        if((SoftGround.value & (1 << collision.gameObject.layer)) != 0)
+        {
+            Debug.Log("softCollided");
+            pAudio.PlaySoftCollision();
+        }
+
+    }
+
+
 }
