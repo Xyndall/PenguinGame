@@ -19,11 +19,13 @@ public class PlayerDash : MonoBehaviour
     [Header("DashVariables")]
     [SerializeField] float timer;
     public float DashCooldown = 2;
+    public float DashAmount = 10;
     [SerializeField] bool isDashinig;
     [SerializeField] bool TouchedGround;
-    public float DashAmount = 10;
+    public GameObject DashEffect;
 
     private PlayerAudio pAudio;
+    public Vector2 vectorShow;
 
     private void Awake()
     {
@@ -38,6 +40,8 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
+        vectorShow = playerInputActions.Player.Move.ReadValue<Vector2>();
+
         if (isGrounded())
         {
             TouchedGround = true;
@@ -62,10 +66,11 @@ public class PlayerDash : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
+        //context.performed is to check if the input was performed and to only go through with code once the input is performed
+        //inputaction has three states onpressed, performed, released. we check if input has been performed so it doesnt happen every three states.
         if (context.performed && !isDashinig && TouchedGround) 
         {
-            Debug.Log("Dash");
-            pAudio.PlayDash();
+            //Getting player input and camera position relative to the input
             Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 
             Vector3 CameraForward = Camera.main.transform.forward;
@@ -80,13 +85,29 @@ public class PlayerDash : MonoBehaviour
 
             Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
                 + rightRelativeVerticalInput;
-           
+            //
 
-            if(InputVector.x > 0.125f || InputVector.y > 0.125f)
+
+            Debug.Log("Dash");
+            GameObject particle = Instantiate(DashEffect, groundCheck.position, Quaternion.identity);
+
+            Destroy(particle, 0.2f);
+
+            pAudio.PlayDash();
+
+
+            //if inputs are greater than 0.125f or less then -0.125f (0.125f is the controller stick deadzone)
+            //to use camera relative movement for dash direction
+            //else   if between -0.125f - 0.125f then use main camera forward for dash direction
+            if (InputVector.x > 0.125f || InputVector.y > 0.125f)
             {
                 _rb.velocity = cameraRelativeMovement * DashAmount;
             }
-            else if(InputVector.x <= 0.125f || InputVector.y <= 0.125f)
+            else if(InputVector.x <= -0.125f || InputVector.y <= -0.125f)
+            {
+                _rb.velocity = cameraRelativeMovement * DashAmount;
+            }
+            else
             {
                 _rb.velocity = CameraForward * DashAmount;
             }
@@ -100,6 +121,7 @@ public class PlayerDash : MonoBehaviour
 
     bool isGrounded()
     {
+        //bool returns true if raycast is hitting layermask ground else returns false
         RaycastHit hit;
         if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, 0.3f, ground))
         {

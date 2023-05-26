@@ -10,8 +10,9 @@ public class PlayerJump : MonoBehaviour
     [Header("JumpVariables")]
     public float jumpForce = 5f;
     public float GroundDistance = .5f;
+    public GameObject JumpEffect;
 
-    [Header("GrounbdCheck")]
+    [Header("GroundCheck")]
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
     [SerializeField] private PlayerInput playerInput;
@@ -39,6 +40,8 @@ public class PlayerJump : MonoBehaviour
     {
         if (context.performed && isGrounded())
         {
+            GameObject particle = Instantiate(JumpEffect, groundCheck.position, Quaternion.identity);
+            Destroy(particle, 0.2f);
             pAudio.PlayJump();
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
@@ -48,7 +51,7 @@ public class PlayerJump : MonoBehaviour
     bool isGrounded()
     {
         RaycastHit hit;
-        if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, 0.3f, ground))
+        if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, GroundDistance, ground))
         {
             return true;
         }

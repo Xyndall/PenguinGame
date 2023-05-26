@@ -85,7 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783d92279c9db554fb02723fcb5b75a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 0}
   health: 0
+  VelocityValue: {x: 0, y: 0, z: 0}
 --- !u!114 &7285538101964641596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +125,8 @@ MonoBehaviour:
   _rb: {fileID: 7285538101964641595}
   jumpForce: 2
   GroundDistance: 0.8
+  JumpEffect: {fileID: 1990271084496873464, guid: 09a2ca9af24691d43959a2f6c86fa3a5,
+    type: 3}
   groundCheck: {fileID: 7285538102742881712}
   ground:
     serializedVersion: 2
@@ -149,9 +153,11 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   timer: 0
   DashCooldown: 2
+  DashAmount: 5
   isDashinig: 0
   TouchedGround: 0
-  DashAmount: 5
+  DashEffect: {fileID: 1990271084496873464, guid: f95b8367cf5c5ee4aac6ac2509dac04c,
+    type: 3}
 --- !u!114 &7285538101964641594
 MonoBehaviour:
   m_ObjectHideFlags: 0
