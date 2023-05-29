@@ -11,19 +11,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     private PlayerInputActions playerInputActions;
     public float _moveSpeed = 5f;
-    
 
-    [Header("CheckSphere")]
-    [SerializeField] LayerMask hardGround;
-    [SerializeField] LayerMask SoftGround;
+
+    PlayerGroundCheck pGroundCheck;
 
     private PlayerAudio pAudio;
+
+
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         pAudio = GetComponent<PlayerAudio>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
@@ -31,11 +32,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        Move();
-    }
-
-    public void Move()
     {
         Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 
@@ -53,18 +49,18 @@ public class PlayerMovement : MonoBehaviour
             + rightRelativeVerticalInput;
 
         _rb.AddForce(cameraRelativeMovement * _moveSpeed * Time.deltaTime, ForceMode.Impulse);
-
     }
+
 
     void OnCollisionEnter(Collision collision)
     {
-        if((hardGround.value & (1 << collision.gameObject.layer)) != 0)
+        if((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0)
         {
             Debug.Log("HardCollided");
             pAudio.PlayHardCollision();
         }
 
-        if((SoftGround.value & (1 << collision.gameObject.layer)) != 0)
+        if((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0)
         {
             Debug.Log("softCollided");
             pAudio.PlaySoftCollision();

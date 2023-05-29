@@ -6,11 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerDash : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
-
-    [Header("GroundCheck")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask ground;
-    public float GroundDistance = .5f;
+    PlayerGroundCheck pGroundCheck;
+    
 
     [Header("PlayerInput")]
     [SerializeField] private PlayerInput playerInput;
@@ -32,6 +29,7 @@ public class PlayerDash : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         pAudio = GetComponent<PlayerAudio>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
@@ -42,7 +40,7 @@ public class PlayerDash : MonoBehaviour
     {
         vectorShow = playerInputActions.Player.Move.ReadValue<Vector2>();
 
-        if (isGrounded())
+        if (pGroundCheck.isGrounded())
         {
             TouchedGround = true;
         }
@@ -89,7 +87,7 @@ public class PlayerDash : MonoBehaviour
 
 
             Debug.Log("Dash");
-            GameObject particle = Instantiate(DashEffect, groundCheck.position, Quaternion.identity);
+            GameObject particle = Instantiate(DashEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
 
             Destroy(particle, 0.2f);
 
@@ -119,19 +117,5 @@ public class PlayerDash : MonoBehaviour
         }
     }
 
-    bool isGrounded()
-    {
-        //bool returns true if raycast is hitting layermask ground else returns false
-        RaycastHit hit;
-        if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, 0.3f, ground))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 
 }

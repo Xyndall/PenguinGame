@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7285538101964641597}
   - component: {fileID: 7285538101964641598}
   - component: {fileID: 7285538101964641595}
+  - component: {fileID: 5881826945937983541}
   - component: {fileID: 7507371532296486286}
   - component: {fileID: 7285538101964641596}
   - component: {fileID: 7285538101964641593}
@@ -18,6 +19,7 @@ GameObject:
   - component: {fileID: 7285538101964641594}
   - component: {fileID: 8125297706502573676}
   - component: {fileID: 7285538101964641543}
+  - component: {fileID: 4384238125671896086}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -73,6 +75,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5881826945937983541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285538101964641599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b335fd6d11d066043b1cb6a88df5bb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastCheckpoint: {fileID: 0}
 --- !u!114 &7507371532296486286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783d92279c9db554fb02723fcb5b75a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 0}
+  _rb: {fileID: 7285538101964641595}
   health: 0
   VelocityValue: {x: 0, y: 0, z: 0}
 --- !u!114 &7285538101964641596
@@ -124,13 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 7285538101964641595}
   jumpForce: 2
-  GroundDistance: 0.8
+  GroundDistance: 0.4
   JumpEffect: {fileID: 1990271084496873464, guid: 09a2ca9af24691d43959a2f6c86fa3a5,
     type: 3}
-  groundCheck: {fileID: 7285538102742881712}
-  ground:
-    serializedVersion: 2
-    m_Bits: 192
   playerInput: {fileID: 0}
 --- !u!114 &7285538101964641592
 MonoBehaviour:
@@ -158,6 +169,7 @@ MonoBehaviour:
   TouchedGround: 0
   DashEffect: {fileID: 1990271084496873464, guid: f95b8367cf5c5ee4aac6ac2509dac04c,
     type: 3}
+  vectorShow: {x: 0, y: 0}
 --- !u!114 &7285538101964641594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +288,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0e828cd5-72ba-4f40-8184-98fe88067acc
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5520f87e-0963-4e70-a608-ef9160170cae
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -295,7 +311,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSource: {fileID: 7285538101964641543}
   hardBonkClips:
-  - {fileID: 8300000, guid: ee38112e4ad02e34e95863f35769c08c, type: 3}
+  - {fileID: 8300000, guid: 1bfffdd1daae6fa408d22d58f2e33071, type: 3}
+  - {fileID: 8300000, guid: 2aa4f8e79644bba4eaca224272f883f5, type: 3}
+  - {fileID: 8300000, guid: 0a47e8858d209fb4ea7dd8aed579d97b, type: 3}
+  - {fileID: 8300000, guid: 7c509709af364ea48b86c7dbe87532d2, type: 3}
+  - {fileID: 8300000, guid: 30e367c81d11fef4a84b31c8cfa79eb5, type: 3}
+  - {fileID: 8300000, guid: f3a3476a6329e5946acc159a896ea021, type: 3}
   softBonkClips:
   - {fileID: 8300000, guid: 580428b234d11b34eae2e49f4d33ddd8, type: 3}
   extraSource: {fileID: 7285538102570040860}
@@ -320,10 +341,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -358,7 +379,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -398,6 +419,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4384238125671896086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285538101964641599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e41d4f3cfe20d44a9e5c24533993ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 7285538102742881712}
+  ground:
+    serializedVersion: 2
+    m_Bits: 192
+  hardGround:
+    serializedVersion: 2
+    m_Bits: 64
+  SoftGround:
+    serializedVersion: 2
+    m_Bits: 128
+  GroundDistance: 0.4
 --- !u!1 &7285538102570040862
 GameObject:
   m_ObjectHideFlags: 0

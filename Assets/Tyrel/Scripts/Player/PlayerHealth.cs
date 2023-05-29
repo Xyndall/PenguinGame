@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
+    PlayerGroundCheck pGroundCheck;
 
     public int health;
 
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();  
 
         ResetHealth();
     }
@@ -37,23 +39,27 @@ public class PlayerHealth : MonoBehaviour
         switch (health)
         {
             case 3:
-                Debug.Log("FullHealth" + health);
+                
                 break;
 
             case 2:
-                Debug.Log("Two Thirds health" + health);
+                
                 break;
 
             case 1:
-                Debug.Log("One Third Health" + health);
+                
                 break;
 
             case 0:
-                Debug.Log("Death" + health);
+                
+                break;
+
+            case -1:
+                
                 break;
 
             default:
-                Debug.Log("FullHealth" + health);
+                
                 break;
         }
 
@@ -76,12 +82,24 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void Death()
+    {
+        
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (WillTakeFallDamage)
+        if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage)
         {
             health -= FallDamageAmount;
-        } 
+            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        }
+        if (((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage)
+        {
+            health -= (FallDamageAmount - 1);
+            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        }
+
 
     }
 

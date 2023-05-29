@@ -13,8 +13,7 @@ public class PlayerJump : MonoBehaviour
     public GameObject JumpEffect;
 
     [Header("GroundCheck")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask ground;
+    PlayerGroundCheck pGroundCheck;
     [SerializeField] private PlayerInput playerInput;
 
     private PlayerAudio pAudio;
@@ -24,23 +23,20 @@ public class PlayerJump : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         pAudio = GetComponent<PlayerAudio>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
 
         PlayerInputActions playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
     }
 
-    private void Update()
-    {
 
-        Debug.DrawRay(groundCheck.position, -Vector3.up * GroundDistance, Color.red);
-    }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded())
+        if (context.performed && pGroundCheck.isGrounded())
         {
-            GameObject particle = Instantiate(JumpEffect, groundCheck.position, Quaternion.identity);
+            GameObject particle = Instantiate(JumpEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
             Destroy(particle, 0.2f);
             pAudio.PlayJump();
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -48,17 +44,4 @@ public class PlayerJump : MonoBehaviour
     }
 
 
-    bool isGrounded()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(groundCheck.position, -Vector3.up * GroundDistance, out hit, GroundDistance, ground))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 }
