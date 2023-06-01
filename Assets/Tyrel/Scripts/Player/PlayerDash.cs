@@ -66,54 +66,57 @@ public class PlayerDash : MonoBehaviour
     {
         //context.performed is to check if the input was performed and to only go through with code once the input is performed
         //inputaction has three states onpressed, performed, released. we check if input has been performed so it doesnt happen every three states.
-        if (context.performed && !isDashinig && TouchedGround) 
+        if (GameManager.instance.gameIsPaused == false)
         {
-            //Getting player input and camera position relative to the input
-            Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-
-            Vector3 CameraForward = Camera.main.transform.forward;
-            Vector3 CameraRight = Camera.main.transform.right;
-            CameraForward.y = 0;
-            CameraRight.y = 0;
-            CameraForward = CameraForward.normalized;
-            CameraRight = CameraRight.normalized;
-
-            Vector3 forwardRelativeVerticalInput = InputVector.y * CameraForward;
-            Vector3 rightRelativeVerticalInput = InputVector.x * CameraRight;
-
-            Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
-                + rightRelativeVerticalInput;
-            //
-
-
-            Debug.Log("Dash");
-            GameObject particle = Instantiate(DashEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
-
-            Destroy(particle, 0.2f);
-
-            pAudio.PlayDash();
-
-
-            //if inputs are greater than 0.125f or less then -0.125f (0.125f is the controller stick deadzone)
-            //to use camera relative movement for dash direction
-            //else   if between -0.125f - 0.125f then use main camera forward for dash direction
-            if (InputVector.x > 0.125f || InputVector.y > 0.125f)
+            if (context.performed && !isDashinig && TouchedGround)
             {
-                _rb.velocity = cameraRelativeMovement * DashAmount;
-            }
-            else if(InputVector.x <= -0.125f || InputVector.y <= -0.125f)
-            {
-                _rb.velocity = cameraRelativeMovement * DashAmount;
-            }
-            else
-            {
-                _rb.velocity = CameraForward * DashAmount;
-            }
+                //Getting player input and camera position relative to the input
+                Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+                Vector3 CameraForward = Camera.main.transform.forward;
+                Vector3 CameraRight = Camera.main.transform.right;
+                CameraForward.y = 0;
+                CameraRight.y = 0;
+                CameraForward = CameraForward.normalized;
+                CameraRight = CameraRight.normalized;
+
+                Vector3 forwardRelativeVerticalInput = InputVector.y * CameraForward;
+                Vector3 rightRelativeVerticalInput = InputVector.x * CameraRight;
+
+                Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
+                    + rightRelativeVerticalInput;
+                //
+
+
+                Debug.Log("Dash");
+                GameObject particle = Instantiate(DashEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
+
+                Destroy(particle, 0.2f);
+
+                pAudio.PlayDash();
+
+
+                //if inputs are greater than 0.125f or less then -0.125f (0.125f is the controller stick deadzone)
+                //to use camera relative movement for dash direction
+                //else   if between -0.125f - 0.125f then use main camera forward for dash direction
+                if (InputVector.x > 0.125f || InputVector.y > 0.125f)
+                {
+                    _rb.velocity = cameraRelativeMovement * DashAmount;
+                }
+                else if (InputVector.x <= -0.125f || InputVector.y <= -0.125f)
+                {
+                    _rb.velocity = cameraRelativeMovement * DashAmount;
+                }
+                else
+                {
+                    _rb.velocity = CameraForward * DashAmount;
+                }
 
 
 
-            TouchedGround = false;
-            isDashinig = true;
+                TouchedGround = false;
+                isDashinig = true;
+            } 
         }
     }
 

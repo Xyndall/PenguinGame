@@ -33,22 +33,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        if (GameManager.instance.gameIsPaused == false)
+        {
+            Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 
-        Vector3 forward = Camera.main.transform.forward;
-        Vector3 right = Camera.main.transform.right;
-        forward.y = 0;
-        right.y = 0;
-        forward = forward.normalized;
-        right = right.normalized;
+            Vector3 forward = Camera.main.transform.forward;
+            Vector3 right = Camera.main.transform.right;
+            forward.y = 0;
+            right.y = 0;
+            forward = forward.normalized;
+            right = right.normalized;
 
-        Vector3 forwardRelativeVerticalInput = InputVector.y * forward;
-        Vector3 rightRelativeVerticalInput = InputVector.x * right;
+            Vector3 forwardRelativeVerticalInput = InputVector.y * forward;
+            Vector3 rightRelativeVerticalInput = InputVector.x * right;
 
-        Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
-            + rightRelativeVerticalInput;
+            Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
+                + rightRelativeVerticalInput;
 
-        _rb.AddForce(cameraRelativeMovement * _moveSpeed * Time.deltaTime, ForceMode.Impulse);
+            _rb.AddForce(cameraRelativeMovement * _moveSpeed * Time.deltaTime, ForceMode.Impulse); 
+        }
     }
 
 

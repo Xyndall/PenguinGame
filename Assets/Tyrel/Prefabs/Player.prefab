@@ -119,12 +119,6 @@ MonoBehaviour:
   camFollow: {fileID: 7285538102742881712}
   playerInput: {fileID: 0}
   _moveSpeed: 5
-  hardGround:
-    serializedVersion: 2
-    m_Bits: 64
-  SoftGround:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &7285538101964641593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7285538101964641595}
-  jumpForce: 2
+  jumpForce: 5
   GroundDistance: 0.4
   JumpEffect: {fileID: 1990271084496873464, guid: 09a2ca9af24691d43959a2f6c86fa3a5,
     type: 3}
@@ -156,11 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7285538101964641595}
-  groundCheck: {fileID: 7285538102742881712}
-  ground:
-    serializedVersion: 2
-    m_Bits: 192
-  GroundDistance: 0.5
   playerInput: {fileID: 0}
   timer: 0
   DashCooldown: 2
@@ -197,19 +186,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7285538101964641596}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: eb028b1b-fe9a-4231-96a7-6de428e00630
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -217,35 +194,11 @@ MonoBehaviour:
     m_ActionId: 1144b4f7-8d5b-4bb1-8dcd-b9d478ef0da0
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7285538101964641592}
-        m_TargetAssemblyTypeName: PlayerDash, Assembly-CSharp
-        m_MethodName: Dash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: ecec646c-0adc-4744-9627-dae2f5f9dfdc
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7285538101964641593}
-        m_TargetAssemblyTypeName: PlayerJump, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 441f627a-dcc7-44b6-939c-03794fa7b7fa
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -321,7 +274,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 580428b234d11b34eae2e49f4d33ddd8, type: 3}
   extraSource: {fileID: 7285538102570040860}
   JumpClip: {fileID: 8300000, guid: ff68530b1e2382d43bc1eb137ca12e99, type: 3}
-  DashClip: {fileID: 8300000, guid: 7c498068c4e6a7c44b6c52658eacd607, type: 3}
+  DashClip: {fileID: 8300000, guid: c6d29a990723b1148b14162359d7b754, type: 3}
 --- !u!82 &7285538101964641543
 AudioSource:
   m_ObjectHideFlags: 0

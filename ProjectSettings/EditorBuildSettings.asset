@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Tyrel/TestScenes/TyrelTestPlayerController.unity
+    guid: 401e5d972de074d4189b1bb652b33911
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1da8c4d8e7cecba49b580ba1e2a1f2c1,
       type: 2}

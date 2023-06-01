@@ -34,12 +34,15 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && pGroundCheck.isGrounded())
+        if (GameManager.instance.gameIsPaused == false)
         {
-            GameObject particle = Instantiate(JumpEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
-            Destroy(particle, 0.2f);
-            pAudio.PlayJump();
-            _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if (context.performed && pGroundCheck.isGrounded())
+            {
+                GameObject particle = Instantiate(JumpEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
+                Destroy(particle, 0.2f);
+                pAudio.PlayJump();
+                _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            } 
         }
     }
 
