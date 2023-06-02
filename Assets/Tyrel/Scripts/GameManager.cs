@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.Users;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject OptionsCanvas;
     [SerializeField] private GameObject MainPanel;
     [SerializeField] private GameObject SettingsPanel;
+    [SerializeField] private GameObject ControlsPanel;
+    [SerializeField] private GameObject GamepadPanel;
+    [SerializeField] private GameObject KeyboardAndMousePanel;
+
+    [Header("First Selected Buttons")]
     public Button settingsPrimaryButton; 
     public Button mainPrimaryButton; 
+    public Button ControlsPrimaryButton;
+
+    
+    
 
     [Header("Player")]
     [SerializeField] private PlayerInput playerInput;
@@ -20,7 +30,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsPaused;
 
     PlayerInputActions playerInputActions;
-
+    string _CurrentControlScheme;
 
 
     public static GameManager instance;
@@ -35,7 +45,7 @@ public class GameManager : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Pause.performed += Pause_performed;
-
+        
     }
 
     private void Start()
@@ -45,10 +55,32 @@ public class GameManager : MonoBehaviour
         OptionsCanvas.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     void Update()
     {
         
 
+        ControlSchemeIsChanged();
+    }
+
+
+    void ControlSchemeIsChanged()
+    {
+        //switches the controls shown on the ui, dependant on what inputs the player is using
+        if (playerInput.currentControlScheme == "Gamepad")
+        {
+            KeyboardAndMousePanel.SetActive(false);
+            GamepadPanel.SetActive(true);
+        }
+        else if (playerInput.currentControlScheme == "Keyboard&Mouse")
+        {
+            GamepadPanel.SetActive(false);
+            KeyboardAndMousePanel.SetActive(true);
+        }
     }
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
@@ -73,10 +105,18 @@ public class GameManager : MonoBehaviour
     public void SwitchToMenu()
     {
         SettingsPanel.SetActive(false);
+        ControlsPanel.SetActive(false);
         MainPanel.SetActive(true);
         mainPrimaryButton.Select();
     }
 
+    public void SwitchToControls()
+    {
+        MainPanel.SetActive(false);
+        ControlsPanel.SetActive(true);
+        ControlsPrimaryButton.Select();
+        
+    }
 
     //Change player input action map to player
     //playerInput.SwitchCurrentActionMap("Player");
@@ -103,6 +143,7 @@ public class GameManager : MonoBehaviour
         OptionsCanvas.SetActive(true);
         MainPanel.SetActive(true);
         SettingsPanel.SetActive(false);
+        ControlsPanel.SetActive(false);
         mainPrimaryButton.Select();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
