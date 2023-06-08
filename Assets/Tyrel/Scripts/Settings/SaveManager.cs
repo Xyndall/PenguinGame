@@ -45,5 +45,6 @@ public class SaveManager : MonoBehaviour
     public void SaveStringData(string paramName, string value)
     {
         PlayerPrefs.SetString(paramName, value);
+        Debug.Log("saving: " + paramName + " value: " + value);
     }
 }

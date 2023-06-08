@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Users;
+using System.Security.Cryptography.X509Certificates;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,10 +22,13 @@ public class GameManager : MonoBehaviour
     public Button mainPrimaryButton; 
     public Button ControlsPrimaryButton;
 
-    
-    
+
+
 
     [Header("Player")]
+    public GameObject Player;
+    public GameObject[] CheckpointArray;
+    public GameObject CurrentCheckpoint;
     [SerializeField] private PlayerInput playerInput;
 
     public bool gameIsPaused;
@@ -41,23 +45,33 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Pause.performed += Pause_performed;
+
+        foreach(GameObject checkpoint in CheckpointArray)
+        {
+            if(checkpoint.GetComponent<Checkpoint>().checkpointName == PlayerPrefs.GetString("Checkpoint", "MainCheckpoint"))
+            {
+                CurrentCheckpoint = checkpoint;
+            }
+        }
         
     }
 
     private void Start()
     {
-        
+        SpawnAtCurrentCheckpoint();
 
         OptionsCanvas.SetActive(false);
     }
 
-    private void OnEnable()
+    public void SpawnAtCurrentCheckpoint()
     {
-        
+        GameObject player = Instantiate(Player, CurrentCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
+        playerInput = player.GetComponent<PlayerInput>();
+        CinemachineFindPlayer.Instance.SearchForPlayer();
     }
 
     void Update()
