@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     bool WillTakeFallDamage;
     int FallDamageAmount;
 
+    bool EnemyCanDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         pGroundCheck = GetComponent<PlayerGroundCheck>();  
 
         ResetHealth();
+        EnemyCanDamage = true;
     }
 
     public void ResetHealth()
@@ -62,8 +65,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
-        GameManager.instance.SpawnAtCurrentCheckpoint();
-        Destroy(gameObject);
+        GameManager.instance.SpawnAtCurrentCheckpoint(gameObject);
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -83,4 +86,21 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy") && EnemyCanDamage)
+        {
+            health -= 1;
+            EnemyCanDamage = false;
+            Debug.Log("Damage taken : 1");
+            StartCoroutine(WaitForDamage());
+        }
+    }
+
+
+    IEnumerator WaitForDamage()
+    {
+        yield return new WaitForSeconds(1);
+        EnemyCanDamage = true;
+    }
 }

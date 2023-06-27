@@ -5,18 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Checkpoint
+  - Enemy
+  - PlayerCameraCinemachine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - HardGround
   - SoftGround
   - IgnorePlayer
   - 
-  - 
+  - Enemy
   - 
   - 
   - 

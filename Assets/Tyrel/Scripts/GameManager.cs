@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        
+        playerInput = GameObject.FindGameObjectWithTag("PlayerCameraCinemachine").gameObject.GetComponent<PlayerInput>();
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Pause.performed += Pause_performed;
@@ -62,22 +62,23 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnAtCurrentCheckpoint();
+        SpawnAtCurrentCheckpoint(null);
 
         OptionsCanvas.SetActive(false);
     }
 
-    public void SpawnAtCurrentCheckpoint()
+    public void SpawnAtCurrentCheckpoint(GameObject lastPlayer)
     {
+        if(lastPlayer != null)
+        {
+            Destroy(lastPlayer);
+        }
         GameObject player = Instantiate(Player, CurrentCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
-        playerInput = player.GetComponent<PlayerInput>();
         CinemachineFindPlayer.Instance.SearchForPlayer(player);
     }
 
     void Update()
     {
-        
-
         ControlSchemeIsChanged();
     }
 

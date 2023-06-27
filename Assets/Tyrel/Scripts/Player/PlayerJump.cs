@@ -15,22 +15,33 @@ public class PlayerJump : MonoBehaviour
     [Header("GroundCheck")]
     PlayerGroundCheck pGroundCheck;
     [SerializeField] private PlayerInput playerInput;
+    private PlayerInputActions playerInputActions;
 
     private PlayerAudio pAudio;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GameObject.FindGameObjectWithTag("PlayerCameraCinemachine").gameObject.GetComponent<PlayerInput>();
         pAudio = GetComponent<PlayerAudio>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
 
-        PlayerInputActions playerInputActions = new PlayerInputActions();
+        playerInputActions = new PlayerInputActions();
+
+    }
+
+    private void OnEnable()
+    {
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
     }
 
-
+    private void OnDisable()
+    {
+        
+        playerInputActions.Player.Jump.performed -= Jump;
+        playerInputActions.Player.Disable();
+    }
 
     public void Jump(InputAction.CallbackContext context)
     {

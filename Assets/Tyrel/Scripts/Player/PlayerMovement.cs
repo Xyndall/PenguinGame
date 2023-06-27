@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GameObject.FindGameObjectWithTag("PlayerCameraCinemachine").gameObject.GetComponent<PlayerInput>();
         pAudio = GetComponent<PlayerAudio>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
 
