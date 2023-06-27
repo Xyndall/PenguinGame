@@ -59,13 +59,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0)
         {
-            Debug.Log("HardCollided");
+            //Debug.Log("HardCollided");
             pAudio.PlayHardCollision();
         }
 
         if((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0)
         {
-            Debug.Log("softCollided");
+            //Debug.Log("softCollided");
             pAudio.PlaySoftCollision();
         }
 

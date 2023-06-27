@@ -19,8 +19,8 @@ public class LoadSceneManager : MonoBehaviour
     public void QuitGame()
     {
         PlayerPrefs.Save();
+        Application.Quit();
 
-        StartCoroutine(WaitForSave());
     }
 
 

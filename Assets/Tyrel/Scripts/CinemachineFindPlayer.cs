@@ -12,7 +12,7 @@ public class CinemachineFindPlayer : MonoBehaviour
             Instance = this;
     }
 
-    private CinemachineFreeLook vCam;
+    public CinemachineFreeLook vCam;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +21,9 @@ public class CinemachineFindPlayer : MonoBehaviour
         
     }
 
-    public void SearchForPlayer()
+    public void SearchForPlayer(GameObject player)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
 
         vCam.LookAt = player.transform.GetChild(0).transform;
         vCam.Follow = player.transform.GetChild(0).transform;

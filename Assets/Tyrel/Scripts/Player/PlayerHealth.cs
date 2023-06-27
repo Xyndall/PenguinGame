@@ -36,44 +36,22 @@ public class PlayerHealth : MonoBehaviour
         VelocityValue = _rb.velocity;
 
 
-        switch (health)
+        if(health <= 0 )
         {
-            case 3:
-                
-                break;
-
-            case 2:
-                
-                break;
-
-            case 1:
-                
-                break;
-
-            case 0:
-                
-                break;
-
-            case -1:
-                
-                break;
-
-            default:
-                
-                break;
+            Death();
         }
 
-        if(_rb.velocity.y >= -5)
+        if(_rb.velocity.y >= -8)
         {
             WillTakeFallDamage = false;
             FallDamageAmount = 0;
         }
-        else if (_rb.velocity.y <= -5 && _rb.velocity.y >= -10)
+        else if (_rb.velocity.y <= -8 && _rb.velocity.y >= -15)
         {
             WillTakeFallDamage = true;
             FallDamageAmount = 1;
         }
-        else if( _rb.velocity.y <= -10)
+        else if( _rb.velocity.y <= -15)
         {
             WillTakeFallDamage = true;
             FallDamageAmount = health;
@@ -84,7 +62,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
-        
+        GameManager.instance.SpawnAtCurrentCheckpoint();
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

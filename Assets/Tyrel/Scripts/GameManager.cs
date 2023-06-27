@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject player = Instantiate(Player, CurrentCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
         playerInput = player.GetComponent<PlayerInput>();
-        CinemachineFindPlayer.Instance.SearchForPlayer();
+        CinemachineFindPlayer.Instance.SearchForPlayer(player);
     }
 
     void Update()

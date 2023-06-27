@@ -89,7 +89,7 @@ public class PlayerDash : MonoBehaviour
 
 
                 Debug.Log("Dash");
-                GameObject particle = Instantiate(DashEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
+                GameObject particle = Instantiate(DashEffect, pGroundCheck.mainGroundCheck.position, Quaternion.identity);
 
                 Destroy(particle, 0.2f);
 

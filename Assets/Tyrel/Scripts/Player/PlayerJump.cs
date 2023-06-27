@@ -38,7 +38,7 @@ public class PlayerJump : MonoBehaviour
         {
             if (context.performed && pGroundCheck.isGrounded())
             {
-                GameObject particle = Instantiate(JumpEffect, pGroundCheck.groundCheck.position, Quaternion.identity);
+                GameObject particle = Instantiate(JumpEffect, pGroundCheck.mainGroundCheck.position, Quaternion.identity);
                 Destroy(particle, 0.2f);
                 pAudio.PlayJump();
                 _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -46,5 +46,5 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-
+    
 }
