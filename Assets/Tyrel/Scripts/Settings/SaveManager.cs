@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    [SerializeField] private string[] SaveDataIntParamNames;
-    [SerializeField] private string[] SaveDataFloatParamNames;
-    [SerializeField] private string[] SaveDataStringParamNames;
 
+    [Header("Data Names")]
+    public const string FirstTimePlaying = "FirstTimePlaying";
+    public const string playerDeathCount = "PlayerDeathCount";
+    public const string PlayerCheckpoint = "Checkpoint";
+    public const string CollectablesCount = "CollectablesCount";
 
     public static SaveManager instance;
     private void Awake()

@@ -66,7 +66,7 @@ public class PlayerDash : MonoBehaviour
     {
         //context.performed is to check if the input was performed and to only go through with code once the input is performed
         //inputaction has three states onpressed, performed, released. we check if input has been performed so it doesnt happen every three states.
-        if (GameManager.instance.gameIsPaused == false)
+        if (UIManager.instance.gameIsPaused == false)
         {
             if (context.performed && !isDashinig && TouchedGround)
             {

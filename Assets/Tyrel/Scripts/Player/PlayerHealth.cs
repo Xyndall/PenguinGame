@@ -65,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        GameManager.instance.PlayerDied();
         GameManager.instance.SpawnAtCurrentCheckpoint(gameObject);
         
     }

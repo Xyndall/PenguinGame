@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameManager.instance.gameIsPaused == false)
+        if (UIManager.instance.gameIsPaused == false)
         {
             Vector2 InputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 

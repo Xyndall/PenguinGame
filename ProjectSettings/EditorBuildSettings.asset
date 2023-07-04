@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Main/MainScenes/MainMenu.unity
+    guid: 090ca8fe92ee06349b61027464727c59
+  - enabled: 1
     path: Assets/Tyrel/TestScenes/TyrelTestPlayerController.unity
     guid: 401e5d972de074d4189b1bb652b33911
   m_configObjects:

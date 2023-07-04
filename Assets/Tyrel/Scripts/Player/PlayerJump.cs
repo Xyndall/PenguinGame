@@ -45,7 +45,7 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (GameManager.instance.gameIsPaused == false)
+        if (UIManager.instance.gameIsPaused == false)
         {
             if (context.performed && pGroundCheck.isGrounded())
             {
