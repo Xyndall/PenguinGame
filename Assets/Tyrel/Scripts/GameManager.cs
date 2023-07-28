@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         SpawnAtCurrentCheckpoint(null);
 
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

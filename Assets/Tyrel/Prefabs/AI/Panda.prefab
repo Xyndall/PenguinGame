@@ -602,7 +602,7 @@ MonoBehaviour:
   goingToCoverBehaviour: {fileID: 0}
   useSurprisedState: 0
   surprisedStateBehaviour: {fileID: 0}
-  canDistract: 1
+  canDistract: 0
   distractedStateBehaviour: {fileID: 0}
   priorityLevel: 50
   turnAlertOnDistract: 0

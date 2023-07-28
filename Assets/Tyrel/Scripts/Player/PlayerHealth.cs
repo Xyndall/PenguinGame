@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
     PlayerGroundCheck pGroundCheck;
 
+    //use text for now but later health will be shown by the cracking of the egg.
+    public TextMeshProUGUI HealthTExt; 
+
     public int health;
 
     private int maxHealth = 3;
 
     public Vector3 VelocityValue;
+    public float VelocitymagValue;
+
+    public float minDamageVelocity;
+    public float maxDamageVelocity;
 
     bool WillTakeFallDamage;
     int FallDamageAmount;
@@ -26,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
         ResetHealth();
         EnemyCanDamage = true;
+        
     }
 
     public void ResetHealth()
@@ -36,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HealthTExt.text = "" + health;
+        VelocitymagValue = _rb.velocity.magnitude;
         VelocityValue = _rb.velocity;
 
 
@@ -44,22 +55,32 @@ public class PlayerHealth : MonoBehaviour
             Death();
         }
 
-        if(_rb.velocity.y >= -8)
+        if(_rb.velocity.y >= -minDamageVelocity)
         {
-            WillTakeFallDamage = false;
             FallDamageAmount = 0;
+            WillTakeFallDamage = false;
+            
         }
-        else if (_rb.velocity.y <= -8 && _rb.velocity.y >= -15)
+        else if (_rb.velocity.y <= -minDamageVelocity && _rb.velocity.y >= -maxDamageVelocity)
         {
-            WillTakeFallDamage = true;
             FallDamageAmount = 1;
-        }
-        else if( _rb.velocity.y <= -15)
-        {
             WillTakeFallDamage = true;
-            FallDamageAmount = health;
+            
+        }
+        else if( _rb.velocity.y <= -maxDamageVelocity)
+        {
+            FallDamageAmount = health + 1;
+            WillTakeFallDamage = true;
+            
         }
         
+
+        if(_rb.velocity.magnitude >= minDamageVelocity)
+        {
+            FallDamageAmount = 1;
+            WillTakeFallDamage = true;
+            
+        }
 
     }
 
@@ -96,6 +117,12 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Damage taken : 1");
             StartCoroutine(WaitForDamage());
         }
+
+        if (other.CompareTag("Player"))
+        {
+            Death();
+        }
+
     }
 
 

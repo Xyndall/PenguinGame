@@ -320,7 +320,7 @@ MonoBehaviour:
   goingToCoverBehaviour: {fileID: 0}
   useSurprisedState: 0
   surprisedStateBehaviour: {fileID: 0}
-  canDistract: 1
+  canDistract: 0
   distractedStateBehaviour: {fileID: 0}
   priorityLevel: 50
   turnAlertOnDistract: 0
@@ -359,7 +359,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922740808719458606}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8

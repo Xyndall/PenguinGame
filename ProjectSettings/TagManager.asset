@@ -7,6 +7,7 @@ TagManager:
   - Checkpoint
   - Enemy
   - PlayerCameraCinemachine
+  - Death
   layers:
   - Default
   - TransparentFX
