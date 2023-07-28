@@ -1,5 +1,143 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &456281441175128251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5126075822967631910}
+  - component: {fileID: 7602991222599893159}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &5126075822967631910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456281441175128251}
+  m_LocalRotation: {x: -0.011014995, y: -0.20347843, z: -0.104710564, w: 0.9734017}
+  m_LocalPosition: {x: -1.88, y: 2.1500015, z: -5.26}
+  m_LocalScale: {x: 0.3170682, y: 0.3170682, z: 0.3170682}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -3.673, y: -23.243, z: -11.524}
+--- !u!64 &7602991222599893159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456281441175128251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
+--- !u!1 &466959834933648939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5705236485628638675}
+  - component: {fileID: 8367275841718646949}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &5705236485628638675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466959834933648939}
+  m_LocalRotation: {x: -0, y: -0.44088784, z: -0, w: 0.8975622}
+  m_LocalPosition: {x: 4.1294, y: 2.91, z: 4.8032}
+  m_LocalScale: {x: 0.33948493, y: 0.33948493, z: 0.33948493}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8367275841718646949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466959834933648939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
+--- !u!1 &687770690501349062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7317854643891522252}
+  - component: {fileID: 3846022336745950371}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7317854643891522252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687770690501349062}
+  m_LocalRotation: {x: -0, y: -0.29213977, z: -0, w: 0.95637566}
+  m_LocalPosition: {x: -3.85, y: 2.7299995, z: 3.35}
+  m_LocalScale: {x: 0.3170682, y: 0.3170682, z: 0.3170682}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -33.972, z: 0}
+--- !u!64 &3846022336745950371
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687770690501349062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
 --- !u!1 &1505658328473726274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,12 +149,12 @@ GameObject:
   - component: {fileID: 2792004216412668371}
   - component: {fileID: 5738078447230073986}
   - component: {fileID: 5851003079567944809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2792004216412668371
 Transform:
@@ -28,6 +166,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 4
@@ -51,10 +190,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +220,145 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1831670300133288371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599273677259861598}
+  - component: {fileID: 4812835265539905463}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &599273677259861598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831670300133288371}
+  m_LocalRotation: {x: -0.049016394, y: 0.17154437, z: -0.0931826, w: 0.9795341}
+  m_LocalPosition: {x: -4.294, y: 2.159, z: -3.095}
+  m_LocalScale: {x: 0.3170682, y: 0.3170682, z: 0.3170682}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: -3.673, y: 20.238, z: -11.524}
+--- !u!64 &4812835265539905463
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831670300133288371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
+--- !u!1 &1985724123946962683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3849869603220938517}
+  - component: {fileID: 6720169752672269325}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3849869603220938517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985724123946962683}
+  m_LocalRotation: {x: -0.049016394, y: 0.17154437, z: -0.0931826, w: 0.9795341}
+  m_LocalPosition: {x: -5.43, y: 2.3010788, z: 1.14}
+  m_LocalScale: {x: 0.3170682, y: 0.3170682, z: 0.3170682}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: -3.673, y: 20.238, z: -11.524}
+--- !u!64 &6720169752672269325
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985724123946962683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
+--- !u!1 &3409223144439752356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104867232977466719}
+  - component: {fileID: 5871409584601303397}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1104867232977466719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409223144439752356}
+  m_LocalRotation: {x: -0, y: -0.5272024, z: -0, w: 0.8497398}
+  m_LocalPosition: {x: 3.8140166, y: 3.54, z: 3.174696}
+  m_LocalScale: {x: 0.33948493, y: 0.33948493, z: 0.33948493}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: -63.633, z: 0}
+--- !u!64 &5871409584601303397
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409223144439752356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
 --- !u!1 &4208616788438292189
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,12 +370,12 @@ GameObject:
   - component: {fileID: 6262803070137539110}
   - component: {fileID: 925004822914757536}
   - component: {fileID: 8602827734002239396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6262803070137539110
 Transform:
@@ -107,6 +387,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 3
@@ -130,10 +411,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -158,6 +441,99 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5605378490223118514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6213136500525720637}
+  - component: {fileID: 8838216310921017695}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6213136500525720637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605378490223118514}
+  m_LocalRotation: {x: -0, y: -0.44088784, z: -0, w: 0.8975622}
+  m_LocalPosition: {x: -1.8214, y: 3.53, z: 4.5242}
+  m_LocalScale: {x: 0.3170682, y: 0.3170682, z: 0.3170682}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8838216310921017695
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605378490223118514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
+--- !u!1 &6110389924798673482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9087942330789753809}
+  - component: {fileID: 7652848610443086893}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &9087942330789753809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110389924798673482}
+  m_LocalRotation: {x: -0, y: 0.68433374, z: -0, w: 0.72916895}
+  m_LocalPosition: {x: 5.59, y: 3.12, z: 0.15}
+  m_LocalScale: {x: 0.33948493, y: 0.33948493, z: 0.33948493}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 86.366, z: 0}
+--- !u!64 &7652848610443086893
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110389924798673482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
 --- !u!1 &6557953353001011873
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,12 +545,12 @@ GameObject:
   - component: {fileID: 1314833497866533036}
   - component: {fileID: 405680053732892399}
   - component: {fileID: 1018657282409169672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1314833497866533036
 Transform:
@@ -186,6 +562,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 2
@@ -209,10 +586,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -237,6 +616,53 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6890105923774513250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9203589793638373653}
+  - component: {fileID: 4547221091269449964}
+  m_Layer: 7
+  m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &9203589793638373653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6890105923774513250}
+  m_LocalRotation: {x: 0.006490647, y: -0.9805858, z: -0.04724048, w: 0.19020438}
+  m_LocalPosition: {x: -2.264, y: 2.0529, z: -7.595}
+  m_LocalScale: {x: 0.29185453, y: 0.25054044, z: 0.25054044}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768601906473230819}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -5.174, y: -157.965, z: -1.766}
+--- !u!64 &4547221091269449964
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6890105923774513250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f275bd083305d7448115dda3230460b, type: 2}
 --- !u!1 &6954770494557141849
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,12 +674,12 @@ GameObject:
   - component: {fileID: 7768601906473230819}
   - component: {fileID: 3284674368731141778}
   - component: {fileID: -8489133307399510447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7768601906473230819
 Transform:
@@ -262,9 +688,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6954770494557141849}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3081215719356912972}
   - {fileID: 4779985987867399437}
@@ -273,6 +700,15 @@ Transform:
   - {fileID: 2792004216412668371}
   - {fileID: 1097478332097791432}
   - {fileID: 4372911472911802202}
+  - {fileID: 6213136500525720637}
+  - {fileID: 7317854643891522252}
+  - {fileID: 3849869603220938517}
+  - {fileID: 599273677259861598}
+  - {fileID: 5126075822967631910}
+  - {fileID: 9203589793638373653}
+  - {fileID: 5705236485628638675}
+  - {fileID: 1104867232977466719}
+  - {fileID: 9087942330789753809}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -335,12 +771,12 @@ GameObject:
   - component: {fileID: 4372911472911802202}
   - component: {fileID: 5793218772463356648}
   - component: {fileID: 4733688016725346596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4372911472911802202
 Transform:
@@ -352,6 +788,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 6
@@ -375,10 +812,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -403,6 +842,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8399670843278153355
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,12 +854,12 @@ GameObject:
   - component: {fileID: 3081215719356912972}
   - component: {fileID: 3534851196742285588}
   - component: {fileID: 1816582677988987078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3081215719356912972
 Transform:
@@ -431,6 +871,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 0
@@ -454,10 +895,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -482,6 +925,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8698129574342677939
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,12 +937,12 @@ GameObject:
   - component: {fileID: 1097478332097791432}
   - component: {fileID: 8334257104866982950}
   - component: {fileID: 8970179085847561310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1097478332097791432
 Transform:
@@ -510,6 +954,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 5
@@ -533,10 +978,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -561,6 +1008,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &9023691173426664603
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,12 +1020,12 @@ GameObject:
   - component: {fileID: 4779985987867399437}
   - component: {fileID: 1587850372804857192}
   - component: {fileID: 1563212334152111386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4779985987867399437
 Transform:
@@ -589,6 +1037,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7768601906473230819}
   m_RootOrder: 1
@@ -612,10 +1061,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -640,3 +1091,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

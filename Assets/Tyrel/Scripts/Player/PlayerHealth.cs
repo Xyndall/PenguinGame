@@ -118,7 +118,7 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(WaitForDamage());
         }
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Death"))
         {
             Death();
         }
