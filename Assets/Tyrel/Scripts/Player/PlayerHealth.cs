@@ -75,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
         }
         
 
-        if(_rb.velocity.magnitude >= minDamageVelocity)
+        if(_rb.velocity.magnitude >= maxDamageVelocity)
         {
             FallDamageAmount = 1;
             WillTakeFallDamage = true;

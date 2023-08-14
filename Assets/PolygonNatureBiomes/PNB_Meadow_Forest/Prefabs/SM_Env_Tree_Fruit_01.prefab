@@ -33,6 +33,7 @@ Transform:
   - {fileID: 3831198495985503783}
   - {fileID: 426775724720842143}
   - {fileID: 1714300914338143621}
+  - {fileID: 8396936054085464166}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -326,3 +327,49 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7094857994960387809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8396936054085464166}
+  - component: {fileID: 8982792833640624191}
+  m_Layer: 7
+  m_Name: SM_Env_Bush_03_LOD0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &8396936054085464166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094857994960387809}
+  m_LocalRotation: {x: 0.02272827, y: 0.95977384, z: 0.022772541, w: 0.27892494}
+  m_LocalPosition: {x: -0.033, y: 2.8452, z: -0.385}
+  m_LocalScale: {x: 0.793449, y: 0.55661166, z: 0.9088243}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2973149261809905399}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -1.778, y: 147.54, z: 3.231}
+--- !u!64 &8982792833640624191
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094857994960387809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8188b8848c669c341975b5983e19b2d3, type: 2}
