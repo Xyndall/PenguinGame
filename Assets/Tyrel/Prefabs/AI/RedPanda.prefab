@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 5922740808719458593}
   - component: {fileID: 5922740808719458592}
   - component: {fileID: 19019740}
-  - component: {fileID: 19019738}
-  - component: {fileID: 19019739}
-  - component: {fileID: 19019741}
+  - component: {fileID: 2021281016466648923}
+  - component: {fileID: 1303334414}
+  - component: {fileID: 1303334413}
+  - component: {fileID: 1303334412}
+  - component: {fileID: 1303334411}
   m_Layer: 0
   m_Name: RedPanda
   m_TagString: Untagged
@@ -204,35 +206,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &19019738
+--- !u!114 &2021281016466648923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922740808719458606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f9d81f41de4ac4e944188683471a09, type: 3}
+  m_Script: {fileID: 11500000, guid: 158a07d492fc6414dafa15766d0b9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  turnSpeed: 5
-  idleAnim:
-  - Idle_A
-  moveAnim: Walk
-  animT: 0.25
-  idleTime: {x: 5, y: 5}
-  playAudios: 0
-  audioTime: {x: 10, y: 20}
-  avoidFacingObstacles: 0
-  obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  obstacleRayDistance: 3
-  obstacleRayOffset: {x: 0, y: 0, z: 0}
-  showObstacleRay: 0
---- !u!114 &19019739
+  animator: {fileID: 5922740808719458592}
+--- !u!195 &1303334414
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922740808719458606}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.64
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1303334413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,7 +258,7 @@ MonoBehaviour:
   showCenterPosition: 1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 4294967295
   audioScriptable: {fileID: 11400000, guid: 9d2347037271de6479884c19e2fb7a2f, type: 2}
   agentAudio: {fileID: 19019740}
   waypoints:
@@ -260,8 +269,8 @@ MonoBehaviour:
     loop: 0
     showWaypoints: 1
     randomize: 1
-    randomizeRadius: 10
-    showRandomizeRadius: 1
+    randomizeRadius: 20
+    showRandomizeRadius: 0
     useMovementTurning: 0
     movementTurningSensitivity: 0.5
     useTurnAnims: 0
@@ -311,7 +320,7 @@ MonoBehaviour:
   warnEmptyBehavioursOnStart: 1
   warnEmptyAnimations: 1
   useNormalStateOnAwake: 1
-  normalStateBehaviour: {fileID: 19019738}
+  normalStateBehaviour: {fileID: 1303334412}
   useAlertStateOnAwake: 0
   alertStateBehaviour: {fileID: 0}
   attackStateBehaviour: {fileID: 0}
@@ -320,7 +329,7 @@ MonoBehaviour:
   goingToCoverBehaviour: {fileID: 0}
   useSurprisedState: 0
   surprisedStateBehaviour: {fileID: 0}
-  canDistract: 0
+  canDistract: 1
   distractedStateBehaviour: {fileID: 0}
   priorityLevel: 50
   turnAlertOnDistract: 0
@@ -351,28 +360,48 @@ MonoBehaviour:
   companionBehaviour: {fileID: 0}
   anim: {fileID: 0}
   capsuleCollider: {fileID: 0}
---- !u!195 &19019741
-NavMeshAgent:
+--- !u!114 &1303334412
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922740808719458606}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f9d81f41de4ac4e944188683471a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  turnSpeed: 5
+  idleAnim:
+  - Idle_A
+  moveAnim: Walk
+  animT: 0.25
+  idleTime: {x: 5, y: 5}
+  playAudios: 0
+  audioTime: {x: 10, y: 20}
+  avoidFacingObstacles: 0
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  obstacleRayDistance: 3
+  obstacleRayOffset: {x: 0, y: 0, z: 0}
+  showObstacleRay: 0
+--- !u!136 &1303334411
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922740808719458606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.56
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_Radius: 0.39
+  m_Height: 1.27
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.34821856, z: 0.11373514}
 --- !u!1 &5922740808792403524
 GameObject:
   m_ObjectHideFlags: 0

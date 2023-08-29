@@ -336,6 +336,7 @@ MonoBehaviour:
   HealthTExt: {fileID: 4630086324569319851}
   health: 3
   VelocityValue: {x: 0, y: 0, z: 0}
+  VelocitymagValue: 0
   minDamageVelocity: 8
   maxDamageVelocity: 10
 --- !u!114 &6970632362499370439

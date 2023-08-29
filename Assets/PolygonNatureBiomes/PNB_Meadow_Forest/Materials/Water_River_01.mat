@@ -143,9 +143,9 @@ Material:
     - _Cutoff: 0.5
     - _Depth: 3.95
     - _DetailNormalMapScale: 1
-    - _Distortion: 0.386
+    - _Distortion: 0.397
     - _Distortion1: 0.292
-    - _DistortionSpeed: 0.283
+    - _DistortionSpeed: 0.222
     - _DistortionTiling: 0.33
     - _DstBlend: 0
     - _Float4: 0.37
@@ -154,7 +154,7 @@ Material:
     - _FoamFalloff: -56
     - _FoamFalloff1: 0
     - _FoamGlowMultiplier: 1
-    - _FoamShoreline: 1
+    - _FoamShoreline: 0.974
     - _FoamSize: 2.62
     - _FoamSize1: 0.019
     - _FoamSmoothness: 0
@@ -164,25 +164,25 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GlowDepth: 0.1
-    - _GlowFalloff: 0.135
+    - _GlowFalloff: 0.1
     - _Metallic: 0
     - _Mode: 0
-    - _NormalScale: 0.08
+    - _NormalScale: 0.201
     - _NormalTiling: 0.38
     - _NormalTiling2: 0.1
     - _ODM: 0.02
     - _OcclusionStrength: 1
-    - _Opacity: 0.46
+    - _Opacity: 1
     - _OpacityFalloff: 3.83
-    - _OpacityMin: 0.3
+    - _OpacityMin: 0.206
     - _OverallFalloff: 1.14
     - _Parallax: 0.02
-    - _ReflectionPower: 0.717
-    - _RippleSpeed: 0.085
+    - _ReflectionPower: 0.32
+    - _RippleSpeed: 0.357
     - _ShallowFalloff: 0.56
     - _Smoothness: 2.83
     - _SmoothnessTextureChannel: 0
-    - _Specular: 0.183
+    - _Specular: 0.244
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Tiling: 0.36
@@ -217,10 +217,10 @@ Material:
     - _Wave3DTilingTufts: 0.2
     - _WaveAmplitude: 0
     - _WaveDirection: 1.35
-    - _WaveFoamOpacity: 0.019
+    - _WaveFoamOpacity: 0.325
     - _WaveNoiseAmount: 2
     - _WaveNoiseScale: 30
-    - _WaveSpeed: 0.063
+    - _WaveSpeed: 0
     - _WaveTiling: 0.21
     - _WaveTiling1: 0.2
     - _WaveTiling2: 0.07

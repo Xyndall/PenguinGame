@@ -55,7 +55,7 @@ Material:
     - _CausticScale: 3
     - _CausticSpeed: 1
     - _Depth: 4.27
-    - _Distortion: 0.078
+    - _Distortion: 0.139
     - _DistortionSpeed: 0.073
     - _DistortionTiling: 0.18
     - _FoamFalloff: -56
@@ -65,24 +65,24 @@ Material:
     - _FoamSpread: 2.53
     - _GlowDepth: 63.3
     - _GlowFalloff: 0.108
-    - _NormalScale: 0.115
+    - _NormalScale: 0.264
     - _NormalTiling: 0.38
     - _NormalTiling2: 0.1
     - _Opacity: 0.9
     - _OpacityFalloff: 9.39
     - _OpacityMin: 0.32
-    - _OverallFalloff: 0.3
+    - _OverallFalloff: 0.45
     - _ReflectionPower: 0.32
-    - _RippleSpeed: 0.083
+    - _RippleSpeed: 0.1
     - _ShallowFalloff: 0.4
     - _Smoothness: 2
     - _Specular: 0.026
-    - _WaveAmplitude: 0.069
+    - _WaveAmplitude: 0
     - _WaveDirection: 0
-    - _WaveFoamOpacity: 0.025
+    - _WaveFoamOpacity: 0.069
     - _WaveNoiseAmount: 2
     - _WaveNoiseScale: 30
-    - _WaveSpeed: 0.112
+    - _WaveSpeed: 0
     - _WaveWavelength: -0.04
     - __dirty: 0
     m_Colors:

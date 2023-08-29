@@ -10,6 +10,8 @@ public class IdleAI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
+            Debug.Log("Trying to hit player");
             float force = 10f;
 
             animator.Play("Idle_C");

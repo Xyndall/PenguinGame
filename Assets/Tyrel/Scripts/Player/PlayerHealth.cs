@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxDamageVelocity;
 
     bool WillTakeFallDamage;
+    bool WillTakeDamage;
     int FallDamageAmount;
 
     bool EnemyCanDamage;
@@ -73,13 +74,13 @@ public class PlayerHealth : MonoBehaviour
             WillTakeFallDamage = true;
             
         }
-        
 
-        if(_rb.velocity.magnitude >= maxDamageVelocity)
+
+        if (_rb.velocity.magnitude >= maxDamageVelocity)
         {
-            FallDamageAmount = 1;
-            WillTakeFallDamage = true;
             
+            WillTakeDamage = true;
+
         }
 
     }
@@ -103,7 +104,12 @@ public class PlayerHealth : MonoBehaviour
             health -= (FallDamageAmount - 1);
             Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
         }
-
+        if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage
+            || ((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage)
+        {
+            health -= 1;
+            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        }
 
     }
 
