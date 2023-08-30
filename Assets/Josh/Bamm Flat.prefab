@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2544390215035177107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2544390215035177107
 Transform:
@@ -40,12 +40,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3193761140969405114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3193761140969405114
 Transform:
@@ -75,12 +75,12 @@ GameObject:
   - component: {fileID: 8668010800657095062}
   - component: {fileID: 8809480160765835325}
   - component: {fileID: 1959004817731529667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bamm Flat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4120163309576835620
 Transform:
@@ -149,12 +149,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5308590082583538359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5308590082583538359
 Transform:
@@ -183,12 +183,12 @@ GameObject:
   - component: {fileID: 4780948690988632710}
   - component: {fileID: 4978661033350368112}
   - component: {fileID: 3021144093486638512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pasted__pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4780948690988632710
 Transform:
@@ -264,12 +264,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8760020105233996141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8760020105233996141
 Transform:
@@ -295,12 +295,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3068101814317035798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3068101814317035798
 Transform:
@@ -326,12 +326,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798327545175796294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pasted__pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &798327545175796294
 Transform:
@@ -358,12 +358,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2885041686105625566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pasted__pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2885041686105625566
 Transform:
@@ -390,12 +390,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2489691644733598992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2489691644733598992
 Transform:
