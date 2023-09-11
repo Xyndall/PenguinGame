@@ -13,6 +13,29 @@ public class PlayerGroundCheck : MonoBehaviour
 
     public Transform[] raycastGroundChecks;
 
+    public bool isSoftGround;
+    public bool isHardGround;
+
+    private void FixedUpdate()
+    {
+        CheckGroundType();
+    }
+
+    void CheckGroundType()
+    {
+        //bool returns true if raycast is hitting layermask ground else returns false
+        RaycastHit hit;
+        if (Physics.CheckSphere(mainGroundCheck.position, 1, SoftGround))
+        {
+            isSoftGround = true;
+        }
+        else if(Physics.CheckSphere(mainGroundCheck.position, 1, hardGround))
+        {
+            isHardGround = true;
+        }
+        
+
+    }
 
     public bool isGrounded()
     {
@@ -37,6 +60,9 @@ public class PlayerGroundCheck : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(mainGroundCheck.position, 1);
+
         Debug.DrawRay(mainGroundCheck.position, -Vector3.up * GroundDistance, Color.red);
         Debug.DrawRay(raycastGroundChecks[0].position, -Vector3.up * GroundDistance, Color.red);
         Debug.DrawRay(raycastGroundChecks[1].position, -Vector3.up * GroundDistance, Color.red);

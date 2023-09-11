@@ -339,6 +339,8 @@ MonoBehaviour:
   VelocitymagValue: 0
   minDamageVelocity: 8
   maxDamageVelocity: 10
+  minimumFall: 5
+  maximumFall: 10
 --- !u!114 &6970632362499370439
 MonoBehaviour:
   m_ObjectHideFlags: 0

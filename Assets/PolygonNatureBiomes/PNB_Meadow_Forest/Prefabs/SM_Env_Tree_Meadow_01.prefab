@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2792004216412668371}
   - component: {fileID: 5738078447230073986}
   - component: {fileID: 5851003079567944809}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 6262803070137539110}
   - component: {fileID: 925004822914757536}
   - component: {fileID: 8602827734002239396}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 1314833497866533036}
   - component: {fileID: 405680053732892399}
   - component: {fileID: 1018657282409169672}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 7768601906473230819}
   - component: {fileID: 3284674368731141778}
   - component: {fileID: -8489133307399510447}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 4372911472911802202}
   - component: {fileID: 5793218772463356648}
   - component: {fileID: 4733688016725346596}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 3081215719356912972}
   - component: {fileID: 3534851196742285588}
   - component: {fileID: 1816582677988987078}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 1097478332097791432}
   - component: {fileID: 8334257104866982950}
   - component: {fileID: 8970179085847561310}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 4779985987867399437}
   - component: {fileID: 1587850372804857192}
   - component: {fileID: 1563212334152111386}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Meadow_01_Branches_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

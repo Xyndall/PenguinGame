@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject MainPanel;
     [SerializeField] private GameObject SettingsPanel;
     [SerializeField] private GameObject ControlsPanel;
+    [SerializeField] private GameObject CreditsPanel;
     [SerializeField] private GameObject GamepadPanel;
     [SerializeField] private GameObject KeyboardAndMousePanel;
 
@@ -80,6 +81,7 @@ public class UIManager : MonoBehaviour
 
         mainPrimaryButton.Select();
         SettingsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
         ControlsPanel.SetActive(false);
 
         //if(first time playing dont show continue button)
@@ -99,7 +101,7 @@ public class UIManager : MonoBehaviour
         {
             NewGame = true;
             Debug.Log("newGame: " + NewGame);
-            StartCoroutine(LoadGameScene());
+            LoadGame();
         }
         else
         {
@@ -116,22 +118,13 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.DeleteKey(SaveManager.playerDeathCount);
         PlayerPrefs.DeleteKey(SaveManager.PlayerCheckpoint);
 
-        StartCoroutine(LoadGameScene());
+        LoadGame();
     }
 
     public void LoadGame()
     {
 
-        StartCoroutine(LoadGameScene());
-       
-    }
-
-    IEnumerator LoadGameScene()
-    {
-        
-        FadeToBlack.SetActive(true);
-        yield return new WaitForSeconds(2);
-        LoadSceneManager.instance.StartGame();
+        LevelLoader.instance.LoadLevel(1);
     }
 
     void ControlSchemeIsChanged()
@@ -151,6 +144,7 @@ public class UIManager : MonoBehaviour
 
     public void SwitchToSettings()
     {
+        CreditsPanel.SetActive(false);
         SettingsPanel.SetActive(true);
         MainPanel.SetActive(false);
         settingsPrimaryButton.Select();
@@ -158,6 +152,7 @@ public class UIManager : MonoBehaviour
 
     public void SwitchToMenu()
     {
+        CreditsPanel.SetActive(false);
         SettingsPanel.SetActive(false);
         ControlsPanel.SetActive(false);
         MainPanel.SetActive(true);
@@ -166,15 +161,18 @@ public class UIManager : MonoBehaviour
 
     public void SwitchToControls()
     {
+        CreditsPanel.SetActive(false);
         MainPanel.SetActive(false);
         ControlsPanel.SetActive(true);
         ControlsPrimaryButton.Select();
 
     }
 
-    //Change player input action map to player
-    //playerInput.SwitchCurrentActionMap("Player");
-    //
+    public void SwitchToCredits()
+    {
+        CreditsPanel.SetActive(true);
+    }
+
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -198,11 +196,8 @@ public class UIManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
-
-
             Time.timeScale = 1;
         }
-        
 
     }
 

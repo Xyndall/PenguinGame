@@ -36161,6 +36161,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor ground
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09ea7f3796fb641429070e8c5e4125f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09ea7f3796fb641429070e8c5e4125f8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09ea7f3796fb641429070e8c5e4125f8, type: 3}
 --- !u!4 &1284904392169968107 stripped

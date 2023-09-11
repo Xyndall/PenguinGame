@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7727082501559560897}
   - component: {fileID: 1136886878178746749}
   - component: {fileID: 467835283155333350}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Fruit_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 74766642427550001}
   - component: {fileID: 5139592836022267456}
   - component: {fileID: -7919287013205211967}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Fruit_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 739240639354438539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6210576, y: 1.6210574, z: 1.6210576}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3266173624080576279}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 4270771268416193967}
   - component: {fileID: 285924768852252770}
   - component: {fileID: 6473777507706885376}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Fruit_03_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3266173624080576279}
   - component: {fileID: 7078563208217915395}
   - component: {fileID: 1899453502093884078}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SM_Env_Tree_Fruit_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

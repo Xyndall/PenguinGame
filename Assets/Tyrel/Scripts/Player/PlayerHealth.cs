@@ -23,9 +23,15 @@ public class PlayerHealth : MonoBehaviour
 
     bool WillTakeFallDamage;
     bool WillTakeDamage;
+    bool wasFalling;
+    bool wasGrounded;
+    float StartOfFall;
+    public float minimumFall;
+    public float maximumFall;
     int FallDamageAmount;
 
     bool EnemyCanDamage;
+    bool playerCanDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -38,50 +44,65 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
+    bool isFalling { get { return (pGroundCheck.isGrounded() == false && _rb.velocity.y < 0); } }
+
     public void ResetHealth()
     {
         health = maxHealth;
     }
 
+    private void FixedUpdate()
+    {
+
+        if (!wasFalling && isFalling)
+        {
+            StartOfFall = transform.position.y;
+        }
+        if (!wasGrounded && pGroundCheck.isGrounded()) 
+        {
+            float fallDistance = StartOfFall - transform.position.y;
+
+            if(fallDistance >= minimumFall && fallDistance < maximumFall)
+            {
+                TakeDamage(1);
+            }
+            else if(fallDistance >= maximumFall)
+            {
+                TakeDamage(health);
+            }
+        }
+
+        wasGrounded = pGroundCheck.isGrounded();
+        wasFalling = isFalling;
+    }
+
+   void ChangeFallDistance()
+    {
+        if (pGroundCheck.isSoftGround)
+        {
+            minimumFall = 5;
+            maximumFall = 10;
+        }
+        else if (pGroundCheck.isHardGround)
+        {
+            minimumFall = 4;
+            maximumFall = 8;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        ChangeFallDistance();
         HealthTExt.text = "" + health;
         VelocitymagValue = _rb.velocity.magnitude;
         VelocityValue = _rb.velocity;
-
 
         if(health <= 0 )
         {
             Death();
         }
 
-        if(_rb.velocity.y >= -minDamageVelocity)
-        {
-            FallDamageAmount = 0;
-            WillTakeFallDamage = false;
-            
-        }
-        else if (_rb.velocity.y <= -minDamageVelocity && _rb.velocity.y >= -maxDamageVelocity)
-        {
-            FallDamageAmount = 1;
-            WillTakeFallDamage = true;
-            
-        }
-        else if( _rb.velocity.y <= -maxDamageVelocity)
-        {
-            FallDamageAmount = health + 1;
-            WillTakeFallDamage = true;
-            
-        }
-
-
-        if (_rb.velocity.magnitude >= maxDamageVelocity)
-        {
-            
-            WillTakeDamage = true;
-
-        }
 
     }
 
@@ -94,22 +115,25 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage)
-        {
-            health -= FallDamageAmount;
-            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
-        }
-        if (((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage)
-        {
-            health -= (FallDamageAmount - 1);
-            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
-        }
-        if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage
-            || ((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage)
-        {
-            health -= 1;
-            Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
-        }
+        //if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage && playerCanDamage)
+        //{
+        //    playerCanDamage = false;
+        //    health -= FallDamageAmount;
+        //    Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        //}
+        //if (((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeFallDamage && playerCanDamage)
+        //{
+        //    playerCanDamage = false;
+        //    health -= (FallDamageAmount - 1);
+        //    Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        //}
+        //if (((pGroundCheck.hardGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage && playerCanDamage
+        //    || ((pGroundCheck.SoftGround.value & (1 << collision.gameObject.layer)) != 0) && WillTakeDamage && playerCanDamage)
+        //{
+        //    health -= 1;
+        //    playerCanDamage = false;
+        //    Debug.Log("Damage Taken " + FallDamageAmount + ": Remaining Health " + health);
+        //}
 
     }
 
@@ -118,10 +142,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && EnemyCanDamage)
         {
-            health -= 1;
-            EnemyCanDamage = false;
-            Debug.Log("Damage taken : 1");
-            StartCoroutine(WaitForDamage());
+            TakeDamage(1);
         }
 
         if (other.CompareTag("Death"))
@@ -131,10 +152,20 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    void TakeDamage(int amount)
+    {
+        health -= amount;
+        EnemyCanDamage = false;
+        playerCanDamage = false;
+        StartCoroutine(WaitForDamage());
+        Debug.Log("Damage Taken " + amount);
+        Debug.Log("Player Fell " + (StartOfFall - transform.position.y));
+    }
 
     IEnumerator WaitForDamage()
     {
         yield return new WaitForSeconds(1);
         EnemyCanDamage = true;
+        playerCanDamage = true;
     }
 }
