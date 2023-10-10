@@ -10,7 +10,7 @@ public class FullscreenToggle : MonoBehaviour
     
     private void Awake()
     {
-        _toggle = GetComponent<Toggle>();
+        
 
         int isFullsreen = PlayerPrefs.GetInt("Fullscreen", 1);
         //Debug.Log("Fullscreen toggle retrieved " + isFullsreen);

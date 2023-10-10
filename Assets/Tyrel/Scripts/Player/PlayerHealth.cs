@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.SetCurrentPlayerGO(gameObject);
         _rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();  
 
@@ -109,7 +110,7 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         GameManager.instance.PlayerDied();
-        GameManager.instance.SpawnAtCurrentCheckpoint(gameObject);
+        GameManager.instance.SpawnAtCurrentCheckpoint();
         
     }
 

@@ -10,7 +10,7 @@ public class ResolutionSetter : MonoBehaviour
 
     private void Awake()
     {
-        _dropdown = GetComponent<TMP_Dropdown>();
+        
         _dropdown.options.Clear();
         Resolution[] resolutionArray = Screen.resolutions;
 

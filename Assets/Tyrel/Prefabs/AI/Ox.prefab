@@ -403,7 +403,7 @@ MonoBehaviour:
   ignoreUnreachableEnemy: 0
   fallBackPoints: []
   showPoints: 0
-  warnEmptyBehavioursOnStart: 1
+  warnEmptyBehavioursOnStart: 0
   warnEmptyAnimations: 1
   useNormalStateOnAwake: 1
   normalStateBehaviour: {fileID: 1495690124}

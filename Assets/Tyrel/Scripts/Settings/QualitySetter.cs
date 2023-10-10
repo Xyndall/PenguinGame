@@ -9,7 +9,7 @@ public class QualitySetter : MonoBehaviour
 
     private void Awake()
     {
-        _dropdown = GetComponent<TMP_Dropdown>();
+        
         _dropdown.options.Clear();
         string[] qualityLevels = QualitySettings.names;
 

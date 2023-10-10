@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject[] CheckpointArray;
     public GameObject CurrentCheckpoint;
+    GameObject LastPlayerCurrent;
     public TextMeshProUGUI CollectablesText;
 
 
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnAtCurrentCheckpoint(null);
+        SpawnAtCurrentCheckpoint();
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -51,14 +52,21 @@ public class GameManager : MonoBehaviour
         CollectablesText.text = PlayerPrefs.GetInt(SaveManager.CollectablesCount, 0).ToString();
     }
 
-    public void SpawnAtCurrentCheckpoint(GameObject lastPlayer)
+    public void SetCurrentPlayerGO(GameObject player)
     {
-        if(lastPlayer != null)
+        LastPlayerCurrent = player;
+    }
+
+    public void SpawnAtCurrentCheckpoint()
+    {
+
+        if(LastPlayerCurrent != null)
         {
-            Destroy(lastPlayer);
+            Destroy(LastPlayerCurrent);
         }
         GameObject player = Instantiate(Player, CurrentCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
         CinemachineFindPlayer.Instance.SearchForPlayer(player);
+        LastPlayerCurrent = player;
     }
 
 
