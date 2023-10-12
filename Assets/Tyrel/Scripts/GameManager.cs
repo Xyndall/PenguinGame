@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject CurrentCheckpoint;
     GameObject LastPlayerCurrent;
     public TextMeshProUGUI CollectablesText;
+    public GameObject StoryText;
 
 
     public static GameManager instance;
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.GetString(SaveManager.FirstTimePlaying, "True").Equals("True"))
+        {
+            StoryText.SetActive(true);
+           
+        }
+
         SpawnAtCurrentCheckpoint();
 
         Cursor.lockState = CursorLockMode.Locked;

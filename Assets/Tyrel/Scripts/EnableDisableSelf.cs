@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class EnableDisableSelf : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void DisableSelf()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObject.SetActive(false);
     }
 }
