@@ -7,7 +7,7 @@ public class Win : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PLayer"))
+        if (other.CompareTag("Player"))
         {
             LoadSceneManager.instance.MainMenu();
         }
