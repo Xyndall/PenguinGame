@@ -14,7 +14,7 @@ public class IdleAI : MonoBehaviour
             Debug.Log("Trying to hit player");
             float force = 10f;
 
-            animator.Play("Idle_C");
+            
 
             // Calculate Angle Between the collision point and the player
             Vector3 dir = other.transform.position - transform.position;
